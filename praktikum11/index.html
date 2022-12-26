@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRAKTIKUM11</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .container {
+            display: flex;
+            margin: 50px 350px;
+            width: 500px;
+            height: 300px;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            width: 500px;
+            height: 300px;
+        }
+    </style>
+
+    <script>
+        function dekor1() {
+            dekor_1 = document.getElementById("home");
+            dekor_1.style.color = "aqua";
+        }
+
+        function dekor2() {
+            dekor_2 = document.getElementById("home");
+            dekor_2.style.color = "black";
+        }
+
+        function imagepicker() {
+            const list_image = ["tulip.png", "sunflower.jpg", "chrysan.jpg", "edelweiss.jpg", "cherryblossom.jpg", "rose.jpg"]
+            let pilihan = document.getElementById("option");
+            if(pilihan.value == "Tulip") {
+                let select = list_image[0];
+                document.getElementById("image").src = `image/${select}`
+                alert("Ini gambar tulip.png")
+            }
+
+
+            if(pilihan.value == "Sunflower") {
+                let select = list_image[1];
+                document.getElementById("image").src = `image/${select}`
+                alert("Ini gambar sunflower.jpg")
+            }
+
+            if(pilihan.value == "Chrysan") {
+                let select = list_image[2];
+                document.getElementById("image").src = `image/${select}`
+                alert("Ini gambar chrysan.jpg")
+            }
+
+            if(pilihan.value == "Edelweiss") {
+                let select = list_image[3];
+                document.getElementById("image").src = `image/${select}`
+                alert("Ini gambar edelweiss.jpg")
+            }
+
+            if(pilihan.value == "Cherry Blossom") {
+                let select = list_image[4];
+                document.getElementById("image").src = `image/${select}`
+                alert("Ini gambar cherryblossom.jpg")
+            }
+
+            if(pilihan.value == "Rose") {
+                let select = list_image[5];
+                document.getElementById("image").src = `image/${select}`
+                alert("Ini gambar rose.jpg")
+            }
+
+
+        }
+    </script>
+</head>
+<body>
+    <a href="" onmouseover="dekor1()" onmouseout="dekor2()" id="home"><h1>Welcome to Wilda Image Picker</h1></a>
+    <hr>
+    <br>
+    <select id="option" onchange="imagepicker()">
+        <option value="" selected>Pilih Gambar</option>
+        <option value="Tulip">Tulip</option>
+        <option value="Sunflower">Sunflower</option>
+        <option value="Chrysan">Chrysan</option>
+        <option value="Edelweiss">Edelweiss</option>
+        <option value="Cherry Blossom">Cherry Blossom</option>
+        <option value="Rose">Rose</option>
+    </select>
+    <br>
+    <div class="container" id="container">
+        <div class="box" id="box">
+            <img id="image">
+        </div>
+    </div>
+
+
+</body>
+</html>
